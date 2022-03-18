@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "RBS" => "rbssupport@bpc.ru" }
   spec.source       = { :git => "https://github.com/Runet-Business-Systems/CardKit.git" }
 
-  spec.resources =  "CardKit/banks-info", "CardKit/**/*.lproj/*.strings", "CardKit/CardKit/Images.xcassets", "CardKit/ThreeDSSDK.xcframework"
+  spec.resource_bundles = { "CardKit" => ["CardKit/**/*.lproj/*.strings", "CardKit/banks-info", "CardKit/CardKit/Images.xcassets"] }
 
   spec.exclude_files = "CardKit/Carthage/*.{h,m}", "CardKit/Carthage/**/**/*.lproj/*.strings"
 
@@ -26,5 +26,6 @@ Pod::Spec.new do |spec|
     subspec.source_files = 'CardKit/CardKitCore/*.{h,m}'
   end
 
+  spec.ios.vendored_frameworks = "CardKit/ThreeDSSDK.xcframework"
   spec.ios.deployment_target  = '10.0'
 end

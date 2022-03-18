@@ -9,6 +9,7 @@
 #import "CardKPaymentView.h"
 #import "CardKConfig.h"
 #import "CardKViewController.h"
+#import "NSBundle+Resources.h"
 
 @implementation CardKPaymentView {
   PKPaymentButton *_applePayButton;
@@ -40,14 +41,10 @@
     
 
     
-    _bundle = [NSBundle bundleForClass:[CardKPaymentView class]];
+    _bundle = [NSBundle resourcesBundle];
      
      NSString *language = CardKConfig.shared.language;
-     if (language != nil) {
-       _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-     } else {
-       _languageBundle = _bundle;
-     }
+    _languageBundle = [NSBundle languageBundle:language];
     
     [_cardPaybutton
       setTitle: NSLocalizedStringFromTableInBundle(@"newCard", nil, _languageBundle,  @"New card")

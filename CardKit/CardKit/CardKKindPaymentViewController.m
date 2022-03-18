@@ -15,6 +15,7 @@
 #import "CardKBankLogoView.h"
 #import "CardKPaymentView.h"
 #import "PaymentSystemProvider.h"
+#import "NSBundle+Resources.h"
 
 const NSString *CardKSavedCardsCellID = @"savedCards";
 const NSString *CardKPayCardButtonCellID = @"button";
@@ -39,16 +40,12 @@ const NSString *CardKKindPayRows = @"rows";
   self = [super initWithStyle:UITableViewStyleGrouped];
 
   if (self) {
-    _bundle = [NSBundle bundleForClass:[CardKKindPaymentViewController class]];
+    _bundle = [NSBundle resourcesBundle];
     _removedBindings = [[NSMutableArray alloc] init];
     _currentBindings = [[NSMutableArray alloc] initWithArray:CardKConfig.shared.bindings];
     
      NSString *language = CardKConfig.shared.language;
-     if (language != nil) {
-       _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-     } else {
-       _languageBundle = _bundle;
-     }
+    _languageBundle = [NSBundle languageBundle:language];
     
     _sections = [self _defaultSections];
     

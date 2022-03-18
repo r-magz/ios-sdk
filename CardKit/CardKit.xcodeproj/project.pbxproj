@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50388CBE27E45B990022E2CD /* NSBundle+Resources.m in Sources */ = {isa = PBXBuildFile; fileRef = 50388CBC27E45B990022E2CD /* NSBundle+Resources.m */; };
+		50388CBF27E45B990022E2CD /* NSBundle+Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 50388CBD27E45B990022E2CD /* NSBundle+Resources.h */; };
 		920072D92615E43F0014F864 /* CardKPaymentSessionStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 920072D72615E43F0014F864 /* CardKPaymentSessionStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		920072DA2615E43F0014F864 /* CardKPaymentSessionStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 920072D82615E43F0014F864 /* CardKPaymentSessionStatus.m */; };
 		920312C3255D6562006FBED7 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 920312C2255D6562006FBED7 /* info.plist */; };
@@ -146,6 +148,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		50388CBC27E45B990022E2CD /* NSBundle+Resources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Resources.m"; sourceTree = "<group>"; };
+		50388CBD27E45B990022E2CD /* NSBundle+Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Resources.h"; sourceTree = "<group>"; };
 		920072D72615E43F0014F864 /* CardKPaymentSessionStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardKPaymentSessionStatus.h; sourceTree = "<group>"; };
 		920072D82615E43F0014F864 /* CardKPaymentSessionStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardKPaymentSessionStatus.m; sourceTree = "<group>"; };
 		920312C2255D6562006FBED7 /* info.plist */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; tabWidth = 2; };
@@ -445,6 +449,8 @@
 				9234CC4D247BC315009E3034 /* CardKValidation.m */,
 				9234CC58247FBCDD009E3034 /* CardKPaymentView.h */,
 				9234CC59247FBCDD009E3034 /* CardKPaymentView.m */,
+				50388CBD27E45B990022E2CD /* NSBundle+Resources.h */,
+				50388CBC27E45B990022E2CD /* NSBundle+Resources.m */,
 			);
 			path = CardKit;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				92985C85246A96F4009B7392 /* CardKSwitchView.h in Headers */,
 				9234CC4E247BC315009E3034 /* CardKValidation.h in Headers */,
 				92E247F22475481700C2EF6C /* CardKBinding.h in Headers */,
+				50388CBF27E45B990022E2CD /* NSBundle+Resources.h in Headers */,
 				92365727260E073000913228 /* CardKPaymentFlowController.h in Headers */,
 				D245ABC8231C529D00369747 /* CardKTheme.h in Headers */,
 				92985C89246BEE1E009B7392 /* CardKKindPaymentViewController.h in Headers */,
@@ -769,6 +776,7 @@
 				922FE328261DFAAC005EE6A3 /* TransactionManager.swift in Sources */,
 				92429134255D610700378C68 /* RSA.m in Sources */,
 				92A1461B23435C6B002FBCC3 /* CardKConfig.m in Sources */,
+				50388CBE27E45B990022E2CD /* NSBundle+Resources.m in Sources */,
 				922D6CA6262990EB0092E078 /* CardKPaymentFlowController.m in Sources */,
 				929BA32525591CFC00AB0526 /* TextField.m in Sources */,
 			);

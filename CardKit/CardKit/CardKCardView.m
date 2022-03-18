@@ -12,6 +12,7 @@
 #import "Luhn.h"
 #import "CardKConfig.h"
 #import "CardKValidation.h"
+#import "NSBundle+Resources.h"
 
 NSInteger EXPIRE_YEARS_DIFF = 10;
 
@@ -37,14 +38,10 @@ NSInteger EXPIRE_YEARS_DIFF = 10;
   if (self) {
     CardKTheme *theme = CardKConfig.shared.theme;
   
-    _bundle = [NSBundle bundleForClass:[CardKCardView class]];
+    _bundle = [NSBundle resourcesBundle];
   
     NSString *language = CardKConfig.shared.language;
-    if (language != nil) {
-      _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-    } else {
-      _languageBundle = _bundle;
-    }
+    _languageBundle = [NSBundle languageBundle:language];
 
     _errorMessagesArray = [[NSMutableArray alloc] init];
     

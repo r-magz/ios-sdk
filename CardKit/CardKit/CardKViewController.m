@@ -15,6 +15,7 @@
 #import "CardKSwitchView.h"
 #import "CardKKindPaymentViewController.h"
 #import "SeTokenGenerator.h"
+#import "NSBundle+Resources.h"
 
 const NSString *CardKCardCellID = @"card";
 const NSString *CardKOwnerCellID = @"owner";
@@ -102,14 +103,10 @@ NSString *CardKFooterID = @"footer";
 
 - (instancetype)init {
   if (self = [super initWithStyle:UITableViewStyleGrouped]) {
-    _bundle = [NSBundle bundleForClass:[CardKViewController class]];
+    _bundle = [NSBundle resourcesBundle];
 
     NSString *language = CardKConfig.shared.language;
-    if (language != nil) {
-      _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-    } else {
-      _languageBundle = _bundle;
-    }
+    _languageBundle = [NSBundle languageBundle:language];
 
     _ownerErrors = [[NSMutableArray alloc] init];
 

@@ -14,6 +14,7 @@
 #import "CardKValidation.h"
 #import "CardKBankLogoView.h"
 #import "SeTokenGenerator.h"
+#import "NSBundle+Resources.h"
 
 const NSString *CardKBindingCardCellID = @"bindingCard";
 const NSString *CardKBindingButtonCellID = @"button";
@@ -35,15 +36,10 @@ NSString *CardKConfirmChoosedCardFooterID = @"footer";
     _button =  [UIButton buttonWithType:UIButtonTypeSystem];
     _button.tag = 30007;
     
-    _bundle = [NSBundle bundleForClass:[ConfirmChoosedCard class]];
+    _bundle = [NSBundle resourcesBundle];
      
      NSString *language = CardKConfig.shared.language;
-    
-     if (language != nil) {
-       _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-     } else {
-       _languageBundle = _bundle;
-     }
+    _languageBundle = [NSBundle languageBundle:language];
 
     [_button
       setTitle: NSLocalizedStringFromTableInBundle(@"doneButton", nil, _languageBundle, @"Pay")

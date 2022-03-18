@@ -15,6 +15,7 @@
 #import "CardKValidation.h"
 #import "CardKBankLogoView.h"
 #import "RSA.h"
+#import "NSBundle+Resources.h"
 
 @implementation CardKBinding {
   UIImageView * _paymentSystemImageView;
@@ -35,17 +36,13 @@
 {
   self = [super init];
   if (self) {
-    _bundle = [NSBundle bundleForClass:[CardKBinding class]];
+    _bundle = [NSBundle resourcesBundle];
      
      NSString *language = CardKConfig.shared.language;
 
      _secureCodeErrors = [[NSMutableArray alloc] init];
     
-     if (language != nil) {
-       _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-     } else {
-       _languageBundle = _bundle;
-     }
+    _languageBundle = [NSBundle languageBundle:language];
 
     _paymentSystemImageView = [[UIImageView alloc] init];
     _secureCodeTextField = [[CardKTextField alloc] init];

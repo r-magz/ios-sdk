@@ -9,6 +9,7 @@
 #import "CardKSwitchView.h"
 #import "CardKTheme.h"
 #import "CardKConfig.h"
+#import "NSBundle+Resources.h"
 
 @interface CardKSwitchView ()
 
@@ -31,14 +32,10 @@
   if (self) {
     _theme = CardKConfig.shared.theme;
 
-    _bundle = [NSBundle bundleForClass:[CardKSwitchView class]];
+    _bundle = [NSBundle resourcesBundle];
 
     NSString *language = CardKConfig.shared.language;
-    if (language != nil) {
-      _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-    } else {
-      _languageBundle = _bundle;
-    }
+    _languageBundle = [NSBundle languageBundle:language];
       
       
     _toggle = [[UISwitch alloc] init];

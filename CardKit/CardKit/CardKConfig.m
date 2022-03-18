@@ -8,6 +8,7 @@
 
 #import "CardKConfig.h"
 #import "CKCToken.h"
+#import "NSBundle+Resources.h"
 
 static CardKConfig *__instance = nil;
 
@@ -72,7 +73,7 @@ static CardKConfig *__instance = nil;
 }
 
 + (NSString *) getVersion {
-  return [[[NSBundle bundleForClass: CardKConfig.self] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+  return [[[NSBundle resourcesBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "ConfirmChoosedCard.h"
 #import "CardKPaymentSessionStatus.h"
 #import <ThreeDSSDK/ThreeDSSDK.h>
+#import "NSBundle+Resources.h"
 
 #import <CardKit/CardKit-Swift.h>
 #import "ARes.h"
@@ -38,14 +39,10 @@
   {
     self = [super init];
     if (self) {
-      _bundle = [NSBundle bundleForClass:[CardKViewController class]];
+      _bundle = [NSBundle resourcesBundle];
       
       NSString *language = CardKConfig.shared.language;
-      if (language != nil) {
-        _languageBundle = [NSBundle bundleWithPath:[_bundle pathForResource:language ofType:@"lproj"]];
-      } else {
-        _languageBundle = _bundle;
-      }
+      _languageBundle = [NSBundle languageBundle:language];
       
       _theme = CardKConfig.shared.theme;
       self.view.backgroundColor = CardKConfig.shared.theme.colorTableBackground;

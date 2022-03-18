@@ -9,6 +9,7 @@
 #import "CardKBankLogoView.h"
 #import <WebKit/WebKit.h>
 #import "CardKConfig.h"
+#import "NSBundle+Resources.h"
 
 @interface CardKWebView: WKWebView {
 }
@@ -79,7 +80,7 @@
     _webView.navigationDelegate = self;
     [self addSubview:_coverView];
     
-    NSBundle *bundle = [NSBundle bundleForClass:[CardKBankLogoView class]];
+    NSBundle *bundle = [NSBundle resourcesBundle];
     NSString *path = [bundle pathForResource:@"index" ofType:@"html" inDirectory:@"banks-info"];
     NSURL *url = [NSURL fileURLWithPath:path];
     [_webView loadFileURL:url allowingReadAccessToURL:url];
